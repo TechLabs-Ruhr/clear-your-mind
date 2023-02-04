@@ -8,7 +8,10 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import PeopleIcon from '@mui/icons-material/People';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import SpeedIcon from '@mui/icons-material/Speed';
+import { UilDiary } from '@iconscout/react-unicons'
+import Button from './smallComponents/Button'
+
 //import { faCoffeefaCoffee } from '@fortawesome/free-solid-svg-icons'
 
 
@@ -40,14 +43,40 @@ export function Home() {
             <p id='about'> 
             Clear Your Mind Is A Web Page Designed To Help Physiotherapy Patients Bridge The Time Till Their First Consultation
             </p>
-            <div id="callToAction">Bridge The Time Till Your Consultation With Our 4 Step Model!</div>
-            <div>
-              <AssignmentIcon sx={{ color: "white", fontSize: "200px" }} />
-              <LibraryBooksIcon sx={{ color: "white", fontSize: "200px" }}/>
-              <PeopleIcon sx={{ color: "white", fontSize: "200px" }}  />
-              <FontAwesomeIcon icon="fa-solid fa-gauge-high" />
+            <div id="callToAction">Bridge The Time Till Your Consultation With Our 5 Step Model!</div>
+            <div id="fourStepModel">
+              <div className='card'> 
+                <AssignmentIcon sx={{ color: "white", fontSize: "200px" }} />
+                <div className='cardHeader'>
+                  Diagnose    
+                </div>
+              </div>
+              <div className='card'> 
+                <LibraryBooksIcon sx={{ color: "white", fontSize: "200px" }}/>
+                <div className='cardHeader'>
+                  Learn
+                </div>
+              </div>
+              <div className='card'>
+                <PeopleIcon sx={{ color: "white", fontSize: "200px" }}  />
+                <div className='cardHeader'>
+                  Find Support
+                </div>
+              </div>
+              <div className='card'>
+                <SpeedIcon sx={{ color: "white", fontSize: "200px" }}/>
+                <div className='cardHeader'>
+                  Measure
+                </div>
+              </div>
+              <div className='card'>
+                <UilDiary size="200" color="white"/>
+                <div className='cardHeader'>
+                  Track
+                </div>
+              </div>
             </div>
-
+          <Button title={"Learn More"}/> 
 
 
       </main>
@@ -94,6 +123,6 @@ const paretContainer = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: "150px",
+    marginTop: "70px",
 }
 
