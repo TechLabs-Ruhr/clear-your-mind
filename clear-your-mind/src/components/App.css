@@ -38,22 +38,63 @@ a.nav-link {
 }
 
 #mainPage{
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
+  min-height: 120vh;
 }
 
 #about {
-  margin-top: 300px;
   font-size: 25px;
+  width: 70%;
   font-weight: bold;
   color: white;
   text-align: center;
+  margin: 0 auto;
+  margin-top: 300px;
 }
 
 #callToAction {
-  margin-top: 100px;
+  margin-top: 70px;
   font-size: 25px;
   font-weight: bold;
   color: white;
   text-align: center;
+  padding-bottom: 50px;
 }
+
+#fourStepModel {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-bottom: 100px;
+}
+
+.card {
+  float: left;
+}
+
+.cardHeader {
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  font-size: x-large;
+}
+
+.buttonComponent {
+  /*
+   background-color: #04AA6D; 
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 30%;
+  */
+  
+
+}
+
