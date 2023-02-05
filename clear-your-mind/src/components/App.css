@@ -1,10 +1,10 @@
 body {
   background-color: #337233;
+  min-height: 300vh;
+    display: flex;
+    flex-direction: column;
 }
 
-* {
-  background-color: #337233;
-}
 
 .dropdown {
   color: white;
@@ -41,6 +41,7 @@ a.nav-link {
   width: 70%;
   margin: 0 auto;
   min-height: 120vh;
+  padding-bottom: 400px;
 }
 
 #about {
@@ -67,10 +68,13 @@ a.nav-link {
   width: 100%;
   justify-content: space-between;
   padding-bottom: 100px;
+  background-color: #337233;
 }
 
 .card {
   float: left;
+  background-color: #337233;
+  border: none;
 }
 
 .cardHeader {
@@ -80,21 +84,36 @@ a.nav-link {
   font-size: x-large;
 }
 
-.buttonComponent {
-  /*
-   background-color: #04AA6D; 
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 30%;
-  */
-  
+.valueProposition {
+  padding-top: 200px;
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 310px;
+}
 
+
+.iconWrapper {
+  width: 50%;
+  float: left;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.textFieldRight {
+  width: 50%;
+  float: left;
+  color: white;
+  padding-left: 5%;
+  padding-right: 10%;
+  padding-top: 20px;
+}
+
+.desc {
+  font-size: 19px;
+  padding-bottom: 30px;
+}
+
+.footer {
+  margin-top: auto;
 }
 

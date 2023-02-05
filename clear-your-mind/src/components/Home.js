@@ -9,11 +9,13 @@ import AssignmentIcon from '@mui/icons-material/Assignment';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import PeopleIcon from '@mui/icons-material/People';
 import SpeedIcon from '@mui/icons-material/Speed';
-import { UilDiary } from '@iconscout/react-unicons'
-import Button from './smallComponents/Button'
+import { UilDiary } from '@iconscout/react-unicons';
+import Button from './smallComponents/Button';
+import {ArrowDown2} from 'iconsax-react';
+import Footer from './Footer';
+
 
 //import { faCoffeefaCoffee } from '@fortawesome/free-solid-svg-icons'
-
 
 
 export function Home() {
@@ -76,11 +78,93 @@ export function Home() {
                 </div>
               </div>
             </div>
-          <Button title={"Learn More"}/> 
-
-
+          <Button title={"Learn More"} inner={<ArrowDown2 size="32" backgroundColor="white" color="#337233"/>}/> 
+          <div className='valueProposition'> 
+          <div className='iconWrapper'>
+            <AssignmentIcon sx={{ color: "white", fontSize: "440px" }} />
+          </div>
+            <div className='textFieldRight'>
+            <h2>DIAGNOSE</h2>
+            <h4>Identify Your Underlying Problem By Filling Out Our Questionnaire</h4>
+              <div className='desc'>
+              Our questionnaire was designed by us with the help of our health 
+              professionals to help you determine your exact condition and 
+              its treatment 
+              </div>
+              <Button title="Questionnaire"/> 
+            </div>
+          </div>
+          {/*Learn Value proposition*/}
+          <div className='valueProposition'> 
+            <div className='textFieldRight'>
+            <h2>LEARN</h2>
+            <h4>Learn More About Your Condition By Using Our Content Section </h4>
+              <div className='desc'>
+              Our free content section is equipped with multiple articles and
+               videous that are suited to your exact condition and were 
+               validated and approved by our health proffessinals   
+              </div>
+              <Button title="Free Content"/> 
+            </div>
+            <div className='iconWrapper'>
+            <LibraryBooksIcon sx={{ color: "white", fontSize: "440px" }} />
+          </div>
+          </div>
+              {/*Find Support Value proposition*/}
+          <div className='valueProposition'> 
+          <div className='iconWrapper'>
+            <PeopleIcon sx={{ color: "white", fontSize: "440px" }} />
+          </div>
+            <div className='textFieldRight'>
+            <h2>FIND SUPPRORT</h2>
+            <h4>Share Your Problem With Our Psychiatrists And Other Patients On Our Forum</h4>
+              <div className='desc'>
+              Our forum enables you to post a question concerning your condition 
+              and get help from our health proffessionals and other patients  
+              </div>
+              <Button title="Forum"/> 
+            </div>
+          </div>
+              {/*Measure value proposition*/}
+          <div className='valueProposition'> 
+            <div className='textFieldRight'>
+            <h2>MEASURE</h2>
+            <h4>Use Our Mood Tracker To Provide Our Psychiatrists With Weekly 
+              Insights Into Your Well-Being</h4>
+              <div className='desc'>
+              The mood tracker is a weekly questionaire that is
+              designed to evaluate the current severity of your condition 
+              </div>
+              <Button title="Mood Tracker"/> 
+            </div>
+            <div className='iconWrapper'>
+            <SpeedIcon sx={{ color: "white", fontSize: "440px" }} />
+          </div>
+          </div>
+          {/*Track value proposition*/}
+          <div className='valueProposition'> 
+          <div className='iconWrapper'>
+            	<UilDiary size="440" color="white"/>
+          </div>
+            <div className='textFieldRight'>
+            <h2>TRACK</h2>
+            <h4>Improve The Quality And Potential Benefits Of Your Consultation
+              By Providing Your Therapists With More Detailed Insights Into Your
+              Condition
+            </h4>
+              <div className='desc'>
+              The diary  offers the patient the opportunity to write
+               down things that he finds difficult to pronounce and 
+               to address them aloud
+              </div>
+              <Button title="  Diary  "/> 
+            </div>
+          </div>
       </main>
-
+      <footer className='footer'>
+      <Footer></Footer>
+      </footer>
+      
 
 
 

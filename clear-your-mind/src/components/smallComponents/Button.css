@@ -5,12 +5,12 @@
 .button-17 {
   align-items: center;
   appearance: none;
-  background-color: #fff;
+  background-color: #055308;
   border-radius: 24px;
   border-style: none;
   box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
   box-sizing: border-box;
-  color: #3c4043;
+  color: white;
   cursor: pointer;
   display: inlin e-flex;
   fill: currentcolor;
@@ -34,21 +34,24 @@
   width: auto;
   will-change: transform,opacity;
   z-index: 0;
+  transition: 1s;
+  min-width: 300px;
 }
 
 .button-17:hover {
   background: #F6F9FE;
-  color: #174ea6;
+  color: black;
+  transition: 1s;
 }
 
 .button-17:active {
-  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+  box-shadow: 0 4px 4px 0 rgb(255, 255, 255), 0 8px 12px 6px rgb(255, 255, 255);
   outline: none;
 }
 
 .button-17:focus {
   outline: none;
-  border: 2px solid #4285f4;
+  border: 2px solid #fafafa;
 }
 
 .button-17:not(:disabled) {
