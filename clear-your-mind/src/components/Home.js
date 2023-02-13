@@ -12,6 +12,10 @@ import SpeedIcon from '@mui/icons-material/Speed';
 import { UilDiary } from '@iconscout/react-unicons'
 import Button from './smallComponents/Button'
 
+import {Link } from "react-router-dom";
+
+
+
 //import { faCoffeefaCoffee } from '@fortawesome/free-solid-svg-icons'
 
 
@@ -30,7 +34,7 @@ export function Home() {
               <NavDropdown.Item  style={navLink} href="#action/3.2">
                 Free Content
               </NavDropdown.Item>
-              <NavDropdown.Item style={navLink} href="#action/3.3">Questionnaire</NavDropdown.Item>
+              <NavDropdown.Item style={navLink}> <Link to="/questionnaire">Questionnaire</Link></NavDropdown.Item>
               <NavDropdown.Item style={navLink}  href="#action/3.4">Forum</NavDropdown.Item>
               <NavDropdown.Item style={navLink}  href="#action/3.4">Mood Tracker</NavDropdown.Item>
               <NavDropdown.Item style={navLink}  href="#action/3.4">Diary</NavDropdown.Item>
