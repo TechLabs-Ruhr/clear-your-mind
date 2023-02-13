@@ -1,0 +1,62 @@
+#container {
+    height: 125px;
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    margin: 0 auto;
+    bottom: 0;
+    border-top: 2px solid white ;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    
+}
+
+#logo {
+    font-size: 40px;
+    font-weight: 400;
+    color: white;
+}
+
+.item {
+    color: white;
+    font-size: 19px;
+    height: 80%;
+    padding-top: 1.7%
+}
+
+#secondLogo {
+   padding-left: 7%;
+    padding-top: 2px;
+    width: 200px;
+    display: inline-flex;
+}
+
+.itemLogo{
+    color: white;
+    font-size: 19px;
+    height: 80%;
+    width: 19.7%;
+    padding-top: 1.7%;
+    float:left;
+    display: inline;
+}
+
+#copyrightWrapper {
+    width: 22px;
+    display: inline;
+    padding-bottom: 15px;
+    margin-bottom: 50px;
+}
+
+.itemsSocialMedia {
+    color: white;
+    font-size: 19px;
+    height: 80%;
+    width: 125px;
+    padding-top: 1.7%;
+    display: flex;
+    float: left;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+}
