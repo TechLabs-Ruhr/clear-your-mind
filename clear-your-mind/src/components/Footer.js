@@ -3,9 +3,12 @@ import {Facebook} from 'iconsax-react';
 import {Instagram} from 'iconsax-react';
 import {Copyright} from 'iconsax-react';
 
-function Footer() {
+function Footer(props) {
+
+    const {isLine} = props;
+
     return ( <>
-    <div id="container">
+    <div id="container" style={{borderTop: isLine ? '2px solid white' : 'none'}}>
             <div id="logo">Clear Your Mind</div>
             <div className="itemLogo">
                 <div id='copyrightWrapper'> 

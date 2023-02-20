@@ -117,3 +117,14 @@ a.nav-link {
   margin-top: auto;
 }
 
+#kontener {
+  margin-left: 0px;
+  margin-right: 0px;
+  min-width: 72%;
+}
+
+@media (min-width: 800px) {
+  .search {
+    font-size: 2rem;
+  }
+}
