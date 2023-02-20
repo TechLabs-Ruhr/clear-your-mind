@@ -6,6 +6,7 @@ body {
 }
 .main2 {
   background-color: #7BC17A;
+  min-height: 100vh;
 }
 .forum {
   margin-top: auto;
@@ -22,7 +23,7 @@ body {
 #main {
     margin: 0 auto;
     width: 70%;
-    min-height: 100vh;
+    
     padding-top: 60px;
 }
 
@@ -97,6 +98,7 @@ p {
 
 ::placeholder {
   font-size: 24px;
+  color: #999090;
 }
 
 .search__button {
@@ -130,10 +132,32 @@ p {
 
 /* CSS for the edit post  component*/
 
-#postContainer{
+#PostContainer{
+  margin: 0 auto;
   width: 60%;
-  height: 200px;
-  color: white;
+  height: 600px;
+  background-color: white;
+  margin-top: 100px;
+  border-radius: 24px;
+
 }
 
+#elementsContainer {
+  margin: 0 auto;
+  width: 75%;
+}
 
+#EditorHeader {
+  color: black;
+  text-align: center;
+  font-weight: 700;
+  padding-top: 25px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #999090;
+  width: 100%;
+}
+
+#Title {
+  border: none;
+  width: 2rem;
+}

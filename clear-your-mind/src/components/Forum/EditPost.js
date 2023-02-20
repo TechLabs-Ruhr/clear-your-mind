@@ -6,8 +6,8 @@ export default function EditPost() {
     <>
         <div id='PostContainer'> 
             <div id='elementsContainer'>
-                <h2>Create Post</h2>    
-                
+                <h2 id='EditorHeader'>Create Post</h2>    
+                <input id='Title' placeholder='Title'/>
              </div>
         
         </div>
