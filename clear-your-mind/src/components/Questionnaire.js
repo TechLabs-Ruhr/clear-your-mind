@@ -22,15 +22,13 @@ export function Questionnaire() {
     return (<>
     <div  className="container mt-3" style={{color:"#F6F7EB"}}>
         <h1>Questionnaire</h1>
-    
     <div className="container mt-3">
         <p>{survey[0].instructions}</p>
-    </div>
-        
+    </div> 
     <form onSubmit={handleSubmit}>
       {questions.map((question, questionIndex) => (
-        <Row className='mb-3'>
         <div key={questionIndex}>
+        <Row className='mb-3'>
           <h3>{question.question}</h3>
           {options.map((option, optionIndex) => (
             <label className="container mt-3" key={optionIndex}>
@@ -44,13 +42,11 @@ export function Questionnaire() {
               {option}
             </label>
           ))}
-        </div>
         </Row>
+        </div>
       ))}
       <Button variant="primary" type="submit">Submit</Button>
     </form> 
-
     </div>
-
     </> );
 }
