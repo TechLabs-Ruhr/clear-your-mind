@@ -4,11 +4,12 @@ import '../Forum/Forum.css';
 export default function EditPost() {
   return (
     <>
-        <div id='PostContainer'> 
+        <div id='EditPostContainer'> 
             <div id='elementsContainer'>
                 <h2 id='EditorHeader'>Create Post</h2>    
                 <input id='Title' placeholder='Title'/>
-             </div>
+                <textarea id='Description' placeholder='Description..'/>
+            </div>
         
         </div>
     </>
