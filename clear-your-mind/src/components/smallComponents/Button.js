@@ -6,17 +6,11 @@ import { Link } from 'react-router-dom';
 
 
 function Button(props) {
-
-  //  const history = useHistory();
-/*
-    const handleClick = () => {
-        history.push(props.to);
-    };
-*/
+    const width = props.width ? props.width : '80%';
     return (<>
         <Link to={props.route} className="button-17">
             {props.inner} 
-            <div style={{ width: "80%", display: "inline-block", margin: "0 auto" }}>{props.title}</div>
+            <div style={{ width, display: "inline-block", margin: "0 auto" }}>{props.title}</div>
         </Link>
         </>  );
 }
