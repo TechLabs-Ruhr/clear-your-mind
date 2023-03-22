@@ -20,7 +20,6 @@ export default function ForumMain() {
         <CategoryNavigation/>
         <EditPost /*titleValue={titleValue} descriptionValue={descriptionValue}*/ setList={setList} list={list}/>
         <ListOfPosts posts={list}/>
-        <ForumPost/>
     </main>
     <div className='footer'>
     <Footer/>

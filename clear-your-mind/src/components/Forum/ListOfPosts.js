@@ -5,7 +5,7 @@ import ForumPost from './ForumPost';
 export default function ListOfPosts({posts, setList}) {
   return (
     <>
-    <div id='container'> 
+    <div id='PostsContainer'> 
         <ul>
             {posts.map((post) =>
                 <ForumPost title={post.title} description={post.description}/>  

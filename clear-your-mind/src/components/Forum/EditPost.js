@@ -16,8 +16,9 @@ export default function EditPost({ setList, list }) {
     setDescriptionValue(event.target.value);
   };
 
-  const handleSubmit = event => {
+  function handleSubmit(event) {
     event.preventDefault();
+    
     if (titleValue.trim() && descriptionValue.trim()) {
       const newPost = {
         title: titleValue.trim(),
@@ -27,9 +28,21 @@ export default function EditPost({ setList, list }) {
       setList([...list, newPost]);
       setTitleValue('');
       setDescriptionValue('');
-    }
+    } else {
+      alert("Your post has to have a title and a description!")
+    } 
     console.log("handle Submit was called")
   }
+
+  function test() {
+    console.log("Hello World");
+  }
+
+  function sayHello() {
+    alert('Hello!');
+  }
+
+
 
   return (
     <>
@@ -38,8 +51,11 @@ export default function EditPost({ setList, list }) {
                 <h2 id='EditorHeader'>Create Post</h2>    
                   <input id='Title' placeholder='Title' value={titleValue} onChange={handleTitleChange}/>           
                   <textarea id='Description' placeholder='Description..' value={descriptionValue} onChange={handleDescriptionChange}/>           
-                <Button width="97%" root="#" title="Post" onClick={handleSubmit} /> 
-            </div>
+                <Button onClick={handleSubmit} width="97%" root="#" title="Post"  /> 
+            </div> {/*
+            <button onClick={handleSubmit}>
+      Click me!
+  </button> */}
         </div>
     </>
   )
