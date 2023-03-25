@@ -29,8 +29,7 @@ export default function Header(props) {
             <NavDropdown.Item style={navLink} href="#action/3.3">Questionnaire</NavDropdown.Item>
               <NavDropdown.Item  style={navLink} href="#action/3.2">Free Content</NavDropdown.Item>
               <NavDropdown.Item style={navLink}  href="/forum">Forum</NavDropdown.Item>
-              <NavDropdown.Item style={navLink}  href="#action/3.4">Mood Tracker</NavDropdown.Item>
-              <NavDropdown.Item style={navLink}  href="#action/3.4">Diary</NavDropdown.Item>
+              <NavDropdown.Item style={navLink}  href="/MTD">Mood Tracker & Diary</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

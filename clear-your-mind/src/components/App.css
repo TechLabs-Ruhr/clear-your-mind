@@ -99,6 +99,13 @@ a.nav-link {
   margin-bottom: 30px;
 }
 
+.iconWrapper2 {
+  width: 50%;
+  display: flex;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
 .textFieldRight {
   width: 50%;
   float: left;

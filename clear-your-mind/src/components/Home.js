@@ -104,40 +104,33 @@ export function Home() {
               <Button route="forum" title="Forum"/> 
             </div>
           </div>
-              {/*Measure value proposition*/}
+              {/*Measure & track value proposition*/}
           <div className='valueProposition'> 
             <div className='textFieldRight'>
-            <h2>MEASURE</h2>
-            <h4>Use Our Mood Tracker To Provide Our Psychiatrists With Weekly 
-              Insights Into Your Well-Being</h4>
-              <div className='desc'>
-              The mood tracker is a weekly questionaire that is
-              designed to evaluate the current severity of your condition 
-              </div>
-              <Button title="Mood Tracker"/> 
-            </div>
-            <div className='iconWrapper'>
-            <SpeedIcon sx={{ color: "white", fontSize: "440px" }} />
-          </div>
-          </div>
-          {/*Track value proposition*/}
-          <div className='valueProposition'> 
-          <div className='iconWrapper'>
-            	<UilDiary size="440" color="white"/>
-          </div>
-            <div className='textFieldRight'>
-            <h2>TRACK</h2>
-            <h4>Improve The Quality And Potential Benefits Of Your Consultation
-              By Providing Your Therapists With More Detailed Insights Into Your
-              Condition
-            </h4>
+            <h2>MEASURE & TRACK</h2>
+            <h4>Use Our Mood Tracker And Diary Function To Provide 
+                Our Psychiatrists With Weekly 
+                Insights Into Your Well-Being</h4>
               <div className='desc'>
               The diary  offers the patient the opportunity to write
-               down things that he finds difficult to pronounce and 
-               to address them aloud
+              down anything he observes around his condition.
               </div>
-              <Button title="  Diary  "/> 
+              <div className='desc'>
+              The mood tracker 
+              is a weekly questionaire that is designed to evaluate the current
+              severity of your condition.
+              </div>
+              <div className='desc'>
+              Later the patient can 
+              share these insights with the therapist to improve the quality and 
+              potential benefits of his consultatiation  
+              </div>
+              <Button route="MTD" title="Mood Tracker & Diary Dashboard"/> 
             </div>
+            <div className='iconWrapper2'>
+            <SpeedIcon sx={{ color: "white", fontSize: "400px" }} />
+            <UilDiary size="440" color="white"/>
+          </div>
           </div>
       </main>
       <footer className='footer'>
