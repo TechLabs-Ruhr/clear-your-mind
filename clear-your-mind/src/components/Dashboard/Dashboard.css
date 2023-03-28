@@ -58,3 +58,21 @@
     padding-right: 3%;
     padding-top: 10px;
 }
+
+/* Css for the Slider*/
+
+#description {
+    font-size: 20px;
+}
+
+#sliderLegend {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sliderLabel {
+    font-size: 15px;
+}
+
+
+
