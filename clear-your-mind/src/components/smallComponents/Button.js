@@ -8,9 +8,9 @@ import { Link } from 'react-router-dom';
 function Button(props) {
     const width = props.width ? props.width : '80%';
     const fontSize = props.fontSize ? props.fontSize : '20px';
-    const padding = props.padding ? props.padding : '10px 10px 10px 10px'
+    const padding = props.padding ? props.padding : '0px'
     return (<>
-        <Link to={props.route} className="button-17">
+        <Link to={props.route} className="button-17" onClick={props.onClick}>
             {props.inner} 
             <div style={{
                 padding,

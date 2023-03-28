@@ -73,7 +73,7 @@ a.nav-link {
 
 .card {
   float: left;
-  background-color: #337233;
+  background-color: #337233 !important;
   border: none;
 }
 

@@ -23,7 +23,7 @@ export default function CategoryNavigation() {
     <div id='main'> 
       <h1 className='mainHeader'>Depression</h1>
       <div id='buttonContainer'>
-        <Button root="#" title="Switch Category"/> 
+        <Button width="100%" root="#" title="Switch Category"/> 
         <Button root="#" title="Start a New Topic"/> 
         <SearchBar posts={posts} setSearchResults={setSearchResults}/>
       </div>

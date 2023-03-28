@@ -11,7 +11,7 @@ export default function Dashboard() {
       <Header isLine={false}/>  
       <div id='mainWrapper'> 
         <main id='wrapper'> 
-            <h1>Good morning, James!</h1> 
+            <h1 id='Greeting'>Good morning, James!</h1> 
             <MoodsOverview/>
             <div style={{padding: "100px 0px 100px 0px"}}> 
               <DiaryEntriesOverview/>
