@@ -4,6 +4,8 @@ import {About} from './components/About'
 import ForumMain from './components/Forum/ForumMain';
 import Dashboard from './components/Dashboard/Dashboard';
 import MoodTracker from './components/Dashboard/MoodTracker';
+import {Questionnaire} from './components/Questionnaire';
+
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
       <Route path='forum' element={<ForumMain/>}> </Route>
       <Route path='MTD' element={<Dashboard/>}> </Route>
       <Route path='/MTD/moodTracker' element={<MoodTracker/>}> </Route>
+      <Route path='/questionnaire' element={<Questionnaire/>}> </Route>
    </Routes>
   );
 }
