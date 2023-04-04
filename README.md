@@ -66,10 +66,15 @@ The remaining features will be implemented in the following order:
 6. Applying the backend to the content page to save the likes given by the user 
 
 8.Connecting the existing recommender system for content materials with step 6
+
 9. Finalizing the front end for the Mood tracker and Diary function
+
 10. Applying backend to the mood tracker and Diary 
+
 11.Connecting our Data science functions with the mood tracker and Diary: displaying the stacked bar graph, visualizing how the mood changes over time
+
 12. Implementation of the comment function of the forum 
+
 13. Applying backend to the comment function of the forum   
 
 
