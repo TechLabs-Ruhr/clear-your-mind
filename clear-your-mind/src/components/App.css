@@ -135,3 +135,104 @@ a.nav-link {
     font-size: 2rem;
   }
 }
+
+/*CSS for register and login button*/
+
+#registerLoginContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 18%;
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  padding-right: 50px;
+  padding-top: 50px;
+}
+
+/*CSS for register UI*/
+
+#container {
+  justify-content: left;
+  margin: 0 auto;
+  width: 70%;
+
+}
+
+#formContainer {
+  width: 30%;
+  min-height: 100vh;
+  padding-top: 100px;
+}
+
+#buttonContainer2 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+form {
+  color: white;
+}
+
+.form-group {
+  padding-top: 30px;
+}
+
+.mb-3{
+  padding-top: 30px;
+}
+
+/*CSS for login UI*/
+
+body {
+  display: flex;
+  font-weight: 400;
+  font-family: 'Fira Sans', sans-serif;
+}
+h1,h2,h3,h4,h5,h6,label,span {
+  font-weight: 500;
+  font-family: 'Fira Sans', sans-serif;
+}
+body, html, .App, #root, .auth-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+}
+.auth-inner {
+  width: 450px;
+  margin: auto;
+  background: #ffffff;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+  padding: 40px 55px 45px 55px;
+  border-radius: 15px;
+  transition: all .3s;
+}
+.auth-wrapper .form-control:focus {
+  border-color: white;
+  box-shadow: none;
+}
+.auth-wrapper h3 {
+  text-align: center;
+  margin: 0;
+  line-height: 1;
+  padding-bottom: 20px;
+}
+.custom-control-label {
+  font-weight: 400;
+}
+.forgot-password,
+.forgot-password a {
+  text-align: right;
+  font-size: 13px;
+  padding-top: 10px;
+  color: #ffffff;
+  margin: 0;
+}
+.forgot-password a {
+  color: #ffffff;
+}

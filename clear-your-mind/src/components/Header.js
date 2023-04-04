@@ -6,6 +6,9 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
+
+
 
 
 export default function Header(props) {
@@ -14,6 +17,16 @@ export default function Header(props) {
 
   return (
     <>
+ <div style={{ display: "flex", justifyContent: "flex-end", paddingRight: "10%" }}>
+      <div id="registerLoginContainer">
+      <Link to="/login" style={{ textDecoration: "none" }}>
+        <div style={{color: "white", cursor: "pointer" }}>Login</div>  
+      </Link>
+        <Link to="/register" style={{ textDecoration: "none" }}>
+          <div style={{color: "white", cursor: "pointer" }}>Register</div>
+        </Link>
+      </div>
+    </div>
     <Navbar  expand="lg" style={paretContainer}>
       <Container id="kontener" style={{ 
         margin: "0, auto",
@@ -71,7 +84,6 @@ const paretContainer = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: "70px",
 }
 
 
