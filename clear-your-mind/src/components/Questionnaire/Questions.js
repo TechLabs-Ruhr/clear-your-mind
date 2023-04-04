@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
-import {questions, questionnaire} from './dummy';
+import {questions, questionnaire} from '../dummy';
 
 export default function Questions({toggleVisibility, setResult}) {
     const [answers, setAnswers] = useState([]);

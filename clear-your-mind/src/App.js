@@ -4,7 +4,7 @@ import {About} from './components/About'
 import ForumMain from './components/Forum/ForumMain';
 import Dashboard from './components/Dashboard/Dashboard';
 import MoodTracker from './components/Dashboard/MoodTracker';
-import {Questionnaire} from './components/Questionnaire';
+import {Questionnaire} from './components/Questionnaire/Questionnaire';
 
 
 function App() {

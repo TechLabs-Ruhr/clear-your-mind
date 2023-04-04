@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import Questions from './Questions'
 import Results from './Results'
-import {questionnaire} from './dummy';
+import {questionnaire} from '../dummy';
+import Header from '../Header';
+import Footer from '../Footer';
 
 export function Questionnaire() {
   const [isComplete, setComplete] = useState(false);
@@ -12,7 +14,8 @@ export function Questionnaire() {
   }
     
     return (<>
-    <div  className="container mt-3" style={{color:"#F6F7EB"}}>
+    <Header isLine={true}/>
+    <div  className="container mt-3" style={{color:"#F6F7EB", paddingTop: "100px", paddingBottom: "100px"}}>
       <h1>{questionnaire[0].title}</h1>
       {!isComplete && (
         <Questions toggleVisibility={toggleVisibility} setResult={setResult} />
@@ -21,5 +24,6 @@ export function Questionnaire() {
         <Results result={result} />
       )}
     </div>
+    <Footer isLine={true}/>
     </> );
 }

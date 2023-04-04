@@ -1,5 +1,5 @@
 import React from 'react';
-import {results} from './dummy';
+import {results} from '../dummy';
 
 
 
@@ -22,7 +22,7 @@ export default function Results({result}) {
     }
 
     return (<>
-    <div style={{color:"#F6F7EB"}}>
+    <div style={{color:"#F6F7EB", minHeight: "100vh"}}>
       <h2>Based on your answers to the questionnaire: </h2>
       <h2>You scored {result}</h2>
       <h2>{userResult}</h2>

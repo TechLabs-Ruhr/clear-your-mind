@@ -70,7 +70,7 @@ export function Home() {
               professionals to help you determine your exact condition and 
               its treatment 
               </div>
-              <Button title="Questionnaire"/> 
+              <Button title="Questionnaire" route="/questionnaire"/> 
             </div>
           </div>
           {/*Learn Value proposition*/}

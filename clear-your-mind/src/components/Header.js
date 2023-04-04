@@ -26,7 +26,7 @@ export default function Header(props) {
             <Nav.Link style={navLink} href="/">Home</Nav.Link>
             <Nav.Link style={navLink} href="#link">About</Nav.Link>
             <NavDropdown title={<span className="dropdown">Find Help</span>} id="nav-dropdown">
-            <NavDropdown.Item style={navLink} href="#action/3.3">Questionnaire</NavDropdown.Item>
+            <NavDropdown.Item style={navLink} href="/questionnaire">Questionnaire</NavDropdown.Item>
               <NavDropdown.Item  style={navLink} href="#action/3.2">Free Content</NavDropdown.Item>
               <NavDropdown.Item style={navLink}  href="/forum">Forum</NavDropdown.Item>
               <NavDropdown.Item style={navLink}  href="/MTD">Mood Tracker & Diary</NavDropdown.Item>
