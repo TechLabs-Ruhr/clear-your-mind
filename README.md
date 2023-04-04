@@ -58,18 +58,18 @@ Roadmap
 
 The remaining features will be implemented in the following order:
 
-Backend implementation: connecting react with MySQL
-Implementation of the Authentication and user accounts 
-Applying the backend to the forum to save newly created posts in the database and retrieve and fetch them on the website and assign posts to user accounts
-Applying the backend to the questionnaire to save the result of the user and assign them to user accounts 
-Implementation of the content page displaying the recommended materials (videos and articles)  to help the patients with the treatment of their condition including the feature to like recommended materials 
-Applying the backend to the content page to save the likes given by the user 
-Connecting the existing recommender system for content materials with step 6
-Finalizing the front end for the Mood tracker and Diary function
-Applying backend to the mood tracker and Diary 
-Connecting our Data science functions with the mood tracker and Diary: displaying the stacked bar graph, visualizing how the mood changes over time
-Implementation of the comment function of the forum 
-Applying backend to the comment function of the forum   
+1. Backend implementation: connecting react with MySQL
+2. Implementation of the Authentication and user accounts 
+3. Applying the backend to the forum to save newly created posts in the database and retrieve and fetch them on the website and assign posts to user accounts
+4. Applying the backend to the questionnaire to save the result of the user and assign them to user accounts 
+5. Implementation of the content page displaying the recommended materials (videos and articles)  to help the patients with the treatment of their condition including the feature to like recommended materials 
+6. Applying the backend to the content page to save the likes given by the user 
+7.Connecting the existing recommender system for content materials with step 6
+8. Finalizing the front end for the Mood tracker and Diary function
+9. Applying backend to the mood tracker and Diary 
+10.Connecting our Data science functions with the mood tracker and Diary: displaying the stacked bar graph, visualizing how the mood changes over time
+11. Implementation of the comment function of the forum 
+12. Applying backend to the comment function of the forum   
 
 
 Authors 
