@@ -23,20 +23,20 @@ export default function EditPost({ setList, list }) {
     
     if (titleValue.trim() && descriptionValue.trim()) {
       const newPost = {
+        username: 'John Doe',
+        postTime: '2023-04-06',
         title: titleValue.trim(),
         description: descriptionValue.trim(),
-        id: Math.random() * 100 ,
-        userid: Math.random() * 100,
-        postTime: '2023-04-06',
-        userName: 'John Doe'
       };
+      console.log(newPost.id);
+      //console.log(newPost.userid);
       setList([...list, newPost]);
       setTitleValue('');
       setDescriptionValue('');
 
       Axios.post("http://localhost:3001/api/insert", newPost).then(() => {
         alert("successfull insert!")
-      })
+      }) 
 
     } else {
       alert("Your post has to have a title and a description!")
