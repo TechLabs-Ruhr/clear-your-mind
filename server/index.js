@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser')
-const mysql = require('mysql')
+const bodyParser = require('body-parser');
+const mysql = require('mysql');
+const cors = require("cors");
 
 const db = mysql.createPool({
     host: '127.0.0.1',
@@ -9,6 +10,11 @@ const db = mysql.createPool({
     password: 'Deadrazer3',
     database: 'cruddatabase'
 })
+
+app.use(cors());
+app.use(express.json())
+app.use(bodyParser.urlencoded({extended: true}));
+
 
 app.post("/api/insert", (req, res)=> {
     
@@ -22,10 +28,10 @@ app.post("/api/insert", (req, res)=> {
     const sqlInsert = "INSERT INTO post (id, userid, username, postTime, title, description) VALUES (?,?)"; 
     db.query(sqlInsert, [id, userid, username, postTime, title, description], (err, result) => {
         console.log(result);
+        console.log(err);
     });
 })
 
-app.use(bodyParser.urlencoded({extended: true}))
 
 /*
 app.get('/', (req, res) =>{
