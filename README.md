@@ -9,7 +9,7 @@ Traditional methods of accessing therapy often involve long wait times, leaving 
 Our platform offers a simple and effective approach to help users gain a deeper understanding of their emotions and inner world, using methods such as journaling and mood tracking. Through these techniques, users can gain valuable insights into their thought patterns and emotions, and take positive steps towards improving their mental well-being in a short period of time.
  
 TechStack: 
-React, Node.js
+React, Node.js, Python (data science)
 
 For the style, we used the CSS framework react-bootstrap (Boostrap). The CSS framework "Mui" and fortawesome toolkit were also used sporadically. The icons were taken from Bootstrap, MUI, iconscout, iconsax, iconpark. 
 
@@ -19,6 +19,7 @@ Prerequisites:
 installed VS Code
 installed Node.js
 installed Git 
+Jupyter Notebook (data science)
 
 Steps required to run the application:
 open VS Code and select View/CommandPallete or press ctrl + shift + p
@@ -36,6 +37,17 @@ Make sure that you have successfully logged in to gitHub and connected it to VS 
 type in npm start and click enter
 
 This should run the react application and open it in your default  browser 
+
+To view the data science code, navigate to the data-science folder and open the .ipynb in Juputer Notebook or Google Colab. 
+There are 2 .ipynb files which provide detailed explanations within. 
+
+A brief overview of these two files:
+
+1. Recommender algorithm for questionnaire.ipynb
+    - Contains the recommender algorithm which uses cosine similarity to compare user answers in order to recommend content liked by similar users
+2. Visualize mood tracker data.ipynb
+    - Contains graphs that help users visualize their moods by day of the week and over time.
+
 
 Examples 
 
@@ -81,7 +93,7 @@ The remaining features will be implemented in the following order:
 Authors 
 
 Mariusz Seget (Isztof) https://github.com/Isztof 
-yhamadah  https://github.com/yhamadah
+Yousef Hamadah (yhamadah)  https://github.com/yhamadah
 
 
 
