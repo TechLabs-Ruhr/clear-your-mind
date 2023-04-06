@@ -2,11 +2,13 @@ import React from 'react'
 import '../Forum/Forum.css';
 import Button from '../smallComponents/Button';
 import { useState } from 'react';
+import Axios from 'axios'
 
 export default function EditPost({ setList, list }) {
   
   const [titleValue, setTitleValue] = useState('');
   const [descriptionValue, setDescriptionValue] = useState('');
+
  
   const handleTitleChange = event => {
     setTitleValue(event.target.value);
@@ -23,11 +25,19 @@ export default function EditPost({ setList, list }) {
       const newPost = {
         title: titleValue.trim(),
         description: descriptionValue.trim(),
-        id: Math.random() * 100 
+        id: Math.random() * 100 ,
+        userid: Math.random() * 100,
+        postTime: '2023-04-06',
+        userName: 'John Doe'
       };
       setList([...list, newPost]);
       setTitleValue('');
       setDescriptionValue('');
+
+      Axios.post("http://localhost:3001/api/insert", newPost).then(() => {
+        alert("successfull insert!")
+      })
+
     } else {
       alert("Your post has to have a title and a description!")
     } 
