@@ -9,7 +9,9 @@ Traditional methods of accessing therapy often involve long wait times, leaving 
 Our platform offers a simple and effective approach to help users gain a deeper understanding of their emotions and inner world, using methods such as journaling and mood tracking. Through these techniques, users can gain valuable insights into their thought patterns and emotions, and take positive steps towards improving their mental well-being in a short period of time.
  
 TechStack: 
-React, Node.js, Python (data science)
+Font End: React, Node.js,
+Back End: Node.js, Express, MySQL
+Data Sience: Python 
 
 For the style, we used the CSS framework react-bootstrap (Boostrap). The CSS framework "Mui" and fortawesome toolkit were also used sporadically. The icons were taken from Bootstrap, MUI, iconscout, iconsax, iconpark. 
 
@@ -72,7 +74,7 @@ The remaining features will be implemented in the following order:
 
 1. Backend implementation: connecting react with MySQL
 2. Implementation of the Authentication and user accounts 
-3. Applying the backend to the forum to save newly created posts in the database and retrieve and fetch them on the website and assign posts to user accounts
+3. Deployment of the Web App 
 4. Applying the backend to the questionnaire to save the result of the user and assign them to user accounts 
 5. Implementation of the content page displaying the recommended materials (videos and articles)  to help the patients with the treatment of their condition including the feature to like recommended materials 
 6. Applying the backend to the content page to save the likes given by the user 
