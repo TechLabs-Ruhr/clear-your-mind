@@ -93,6 +93,7 @@ The remaining features will be implemented in the following order:
 Authors 
 
 Mariusz Seget (Isztof) https://github.com/Isztof 
+
 Yousef Hamadah (yhamadah)  https://github.com/yhamadah
 
 
