@@ -28,7 +28,6 @@ app.post("/api/insert", (req, res)=> {
         req.body.description
     ];
 
-
     const sqlInsert = "INSERT INTO post (username, postTime, title, description) VALUES (?)"; 
     db.query(sqlInsert, [values], (err, result) => {
         if (err) {
@@ -40,14 +39,13 @@ app.post("/api/insert", (req, res)=> {
 })
 
 
-/*
-app.get('/', (req, res) =>{
-    const sqlInsert = "INSERT INTO post (userid, username, postTime, title, description) VALUES ('1'), ('bob'), ('2023-04-06'), ('test'), ('lorem ipsum')"
-    db.query(sqlInsert, (err, result) => {
-        res.send("Hello world");
+app.get('/api/get', (req, res) =>{
+    const sqlSelect = "SELECT * FROM post"
+    db.query(sqlSelect, (err, result) => {
+       console.log(result);
+       res.send(result);
     })
 });
-*/
 
 
 app.listen(3001, () => {

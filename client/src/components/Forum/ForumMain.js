@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Footer from '../Footer';
 import Header from '../Header';
 import '../Forum/Forum.css';
@@ -7,9 +7,18 @@ import EditPost from './EditPost';
 import ForumPost from './ForumPost';
 import ListOfPosts from './ListOfPosts';
 import { useState } from 'react';
+import Axios from 'axios'
 
 export default function ForumMain() {
   const [list, setList] = useState([]);
+
+  useEffect(() => {
+    Axios.get("http://localhost:3001/api/get").then((response) => {
+      console.log(response.data);
+      setList(response.data);
+    });
+  }, []);
+  
 /*
   const [titleValue, setTitleValue] = useState('');
   const [descriptionValue, setDescriptionValue] = useState('');
