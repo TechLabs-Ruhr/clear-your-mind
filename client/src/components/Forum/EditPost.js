@@ -38,19 +38,13 @@ export default function EditPost({ setList, list }) {
         alert("successfull insert!")
       }) 
 
-    } else {
+    } else {  
       alert("Your post has to have a title and a description!")
     } 
     console.log("handle Submit was called")
   }
 
-  function test() {
-    console.log("Hello World");
-  }
 
-  function sayHello() {
-    alert('Hello!');
-  }
 
 
 

@@ -26,16 +26,33 @@ app.post("/api/insert", (req, res)=> {
         req.body.postTime,
         req.body.title,
         req.body.description
-    ];
+    ]; 
 
     const sqlInsert = "INSERT INTO post (username, postTime, title, description) VALUES (?)"; 
     db.query(sqlInsert, [values], (err, result) => {
         if (err) {
             return res.json(err);
         } else {
-            return res.json("Insert was succesfull!");
+            return res.json("Insert to post was succesfull!");
         }
     });
+})
+
+app.post('/register', (req, res ) => {
+    const values = [
+        req.body.username,
+        req.body.email,
+        req.body.password,
+    ]
+    
+    db.query("INSERT INTO users (username, email, password) VALUES (?)", [values], (err, result) => {
+        if (err) {
+            return res.json(err);
+        } else {
+            return res.json("Insert to users was successufull!")
+        }
+
+    })
 })
 
 
@@ -46,6 +63,8 @@ app.get('/api/get', (req, res) =>{
        res.send(result);
     })
 });
+
+
 
 
 app.listen(3001, () => {
