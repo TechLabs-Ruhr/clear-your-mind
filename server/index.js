@@ -12,7 +12,7 @@ const db = mysql.createPool({
 })
 
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: "http://localhost:3002",
     credentials: true,
     optionsSuccessStatus: 200 
   }));
@@ -53,6 +53,28 @@ app.post('/register', (req, res ) => {
         }
 
     })
+})
+
+app.post('/login', (req, res) => {
+    const email = req.body.email;
+    const password = req.body.password;
+    console.log(email + " " + password);
+    db.query(
+        "SELECT * FROM users WHERE email = ? AND password = ?",
+        [email, password],
+        (err, result) => {
+            if (err) {
+                res.send({err: err});
+            }
+            if (result) {
+                res.send(result.length > 0);
+                console.log("success")
+
+            } else {
+                res.send({message: "Wrong username/password combination!"});
+            }
+        }
+    )
 })
 
 
