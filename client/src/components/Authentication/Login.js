@@ -10,6 +10,8 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [loginStatus, setLoginStatus] = useState("");
+
   const onSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted!")
@@ -21,11 +23,12 @@ export default function Login() {
       password: password,
     }).then((response) => {
       console.log(response);
-      if(response.data) {
-        alert("You've logged in successfully!");
+      if(response.data.message) {
+        setLoginStatus(response.data.message)
       } else {
-        alert("Wrong username/password combination!");
+        setLoginStatus(response.data.message)
       }
+      alert(loginStatus);
     });
     
   }

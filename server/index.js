@@ -3,6 +3,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const cors = require("cors");
+const bcrypt = require('bcrypt')
+const saltRounds = 10
 
 const db = mysql.createPool({
     host: '127.0.0.1',
@@ -12,7 +14,7 @@ const db = mysql.createPool({
 })
 
 app.use(cors({
-    origin: "http://localhost:3002",
+    origin: "http://localhost:3000",
     credentials: true,
     optionsSuccessStatus: 200 
   }));
@@ -39,39 +41,51 @@ app.post("/api/insert", (req, res)=> {
 })
 
 app.post('/register', (req, res ) => {
-    const values = [
-        req.body.username,
-        req.body.email,
-        req.body.password,
-    ]
     
-    db.query("INSERT INTO users (username, email, password) VALUES (?)", [values], (err, result) => {
-        if (err) {
-            return res.json(err);
-        } else {
-            return res.json("Insert to users was successufull!")
-        }
+    const password = req.body.password;
+    const username = req.body.username;
+    const email =  req.body.email;
+    
+    console.log(password);
 
-    })
-})
+    bcrypt.hash(password, saltRounds, (err, hash) => { // Move the closing parenthesis to the end of the callback function
+       if (err) {
+        console.log(err)
+       }
+
+       db.query("INSERT INTO users (username, email, password) VALUES (?,?,?)", [username, email, hash], (err, result) => {
+            if (err) {
+                console.log("Something went wrong");
+                return res.json(err);
+            } else {
+                console.log("It works");
+            }
+        });
+    }); // Close bcrypt.hash() function call with a closing parenthesis
+});
 
 app.post('/login', (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
-    console.log(email + " " + password);
+    console.log(email);
     db.query(
-        "SELECT * FROM users WHERE email = ? AND password = ?",
-        [email, password],
+        "SELECT * FROM users WHERE email = ?;",
+        [email],
         (err, result) => {
             if (err) {
                 res.send({err: err});
+                console.log("smt went wrong")
             }
-            if (result) {
-                res.send(result.length > 0);
-                console.log("success")
-
+            if (result.length > 0) {
+                bcrypt.compare(password, result[0].password, (error, response) => {
+                    if (response) {
+                        res.send({message: "You've logged in successfully "});
+                    } else {
+                        res.send({message: "Wrong username/password combination!"});
+                    }
+                })
             } else {
-                res.send({message: "Wrong username/password combination!"});
+                res.send({message: "User doesn't exist"});
             }
         }
     )

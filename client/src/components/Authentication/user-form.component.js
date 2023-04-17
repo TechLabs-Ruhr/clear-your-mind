@@ -61,7 +61,6 @@ export default class UserForm extends Component {
         e.preventDefault();
         console.log("Form submitted!")
         if (formValid(this.state)) {
-          console.log(this.state);
           register(
             this.state.usernameReg,
             this.state.emailReg,
