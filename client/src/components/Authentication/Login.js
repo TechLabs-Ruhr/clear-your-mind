@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "../App.css"
 import Header from "../Header";
 import Footer from "../Footer";
@@ -12,12 +12,11 @@ export default function Login() {
 
   const [loginStatus, setLoginStatus] = useState("");
 
+  Axios.defaults.withCredentials =  true;
+
   const onSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted!")
-
-    console.log(password + " " + email)
-
     Axios.post('http://localhost:3001/login', {
       email: email,
       password: password,
@@ -32,7 +31,14 @@ export default function Login() {
     });
     
   }
+
+  //Function for seeing whether a session was created successfully 
   
+  useEffect(()=> {
+    Axios.get("http://localhost:3001/login").then((response) => {
+      console.log(response);
+    })
+  }, [])
   
   return (
     <> 

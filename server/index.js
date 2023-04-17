@@ -1,10 +1,12 @@
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const cors = require("cors");
-const bcrypt = require('bcrypt')
-const saltRounds = 10
+const bodyParser = require('body-parser');
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 const db = mysql.createPool({
     host: '127.0.0.1',
@@ -15,12 +17,24 @@ const db = mysql.createPool({
 
 app.use(cors({
     origin: "http://localhost:3000",
+    methods: ["GET", "POST"],
     credentials: true,
     optionsSuccessStatus: 200 
   }));
+
+app.use(cookieParser());
+
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}));
 
+app.use(session({
+    key: "userId",
+    secret: "subscribe",
+    resave: false,
+    cookie: {
+        expires: 60 * 60 * 24,
+    }
+}))
 
 app.post("/api/insert", (req, res)=> {
     const values = [
@@ -45,8 +59,6 @@ app.post('/register', (req, res ) => {
     const password = req.body.password;
     const username = req.body.username;
     const email =  req.body.email;
-    
-    console.log(password);
 
     bcrypt.hash(password, saltRounds, (err, hash) => { // Move the closing parenthesis to the end of the callback function
        if (err) {
@@ -64,10 +76,18 @@ app.post('/register', (req, res ) => {
     }); // Close bcrypt.hash() function call with a closing parenthesis
 });
 
+app.get("/login", (req, res) => {
+    console.log(req.session.email);
+    if (req.session.username) {
+        res.send({ loggedIn: true, username: req.session.username});
+    } else {
+        res.send({loggedIn: false});
+    }
+})
+
 app.post('/login', (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
-    console.log(email);
     db.query(
         "SELECT * FROM users WHERE email = ?;",
         [email],
@@ -79,7 +99,10 @@ app.post('/login', (req, res) => {
             if (result.length > 0) {
                 bcrypt.compare(password, result[0].password, (error, response) => {
                     if (response) {
-                        res.send({message: "You've logged in successfully "});
+                        console.log(result)
+                        req.session.username = result[0].username;
+                        console.log(req.session.username);
+                        res.send(result);
                     } else {
                         res.send({message: "Wrong username/password combination!"});
                     }
