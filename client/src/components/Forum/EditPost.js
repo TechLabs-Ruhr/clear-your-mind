@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import '../Forum/Forum.css';
 import Button from '../smallComponents/Button';
 import { useState } from 'react';
@@ -8,8 +8,10 @@ export default function EditPost({ setList, list }) {
   
   const [titleValue, setTitleValue] = useState('');
   const [descriptionValue, setDescriptionValue] = useState('');
-
+  
+  const [username, setUsername] = useState('');
  
+
   const handleTitleChange = event => {
     setTitleValue(event.target.value);
   };
@@ -18,12 +20,27 @@ export default function EditPost({ setList, list }) {
     setDescriptionValue(event.target.value);
   };
 
+
+  let userId;
+
+  useEffect(()=> {
+    Axios.get("http://localhost:3001/login", { withCredentials: true }).then((response) => {
+      console.log(response);
+      userId = response.data.id;
+      setUsername(response.data.username);
+      console.log(username);
+      console.log(userId);
+    })
+  }, [])
+
+
   function handleSubmit(event) {
     event.preventDefault();
     
     if (titleValue.trim() && descriptionValue.trim()) {
+      console.log(username);
       const newPost = {
-        username: 'John Doe',
+        username: username,
         postTime: '2023-04-06',
         title: titleValue.trim(),
         description: descriptionValue.trim(),
@@ -41,7 +58,6 @@ export default function EditPost({ setList, list }) {
     } else {  
       alert("Your post has to have a title and a description!")
     } 
-    console.log("handle Submit was called")
   }
 
 

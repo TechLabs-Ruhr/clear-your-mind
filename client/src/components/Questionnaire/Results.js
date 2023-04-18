@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {results} from '../dummy';
+import axios from 'axios';
 
 
 
@@ -20,6 +21,30 @@ export default function Results({result}) {
     } else if (result > 40){
         userResult = results[5].text
     }
+
+    console.log(userResult)
+    console.log(result)
+
+    let username;
+    let userId
+
+    useEffect(()=> {
+        axios.get("http://localhost:3001/login").then((response) => {
+          console.log(response);
+          userId = response.data.userId
+          username = response.data.username;
+          console.log(username);
+          console.log(userId);
+        })
+      }, [])
+
+
+    axios.post('http://localhost:3001/questionnaire', {
+        userid: userId,
+        username: username,
+        userResult: userResult,
+        result: result,
+    }).then((response) => {console.log(response)});
 
     return (<>
     <div style={{color:"#F6F7EB", minHeight: "100vh"}}>

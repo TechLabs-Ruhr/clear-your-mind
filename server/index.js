@@ -28,9 +28,9 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(session({
-    key: "userId",
     secret: "subscribe",
     resave: false,
+    saveUninitialized: false,
     cookie: {
         expires: 60 * 60 * 24,
     }
@@ -79,7 +79,7 @@ app.post('/register', (req, res ) => {
 app.get("/login", (req, res) => {
     console.log(req.session.email);
     if (req.session.username) {
-        res.send({ loggedIn: true, username: req.session.username});
+        res.send({ loggedIn: true, username: req.session.username, userid: req.session.id});
     } else {
         res.send({loggedIn: false});
     }
@@ -101,7 +101,10 @@ app.post('/login', (req, res) => {
                     if (response) {
                         console.log(result)
                         req.session.username = result[0].username;
+                        req.session.id = result[0].id.toString();
+                        console.log( "The id is" + result[0].id.toString())
                         console.log(req.session.username);
+                        console.log(req.session.id);
                         res.send(result);
                     } else {
                         res.send({message: "Wrong username/password combination!"});
@@ -112,6 +115,26 @@ app.post('/login', (req, res) => {
             }
         }
     )
+})
+
+app.post('/questionnaire', (req, res) => {
+    const values = [
+        req.body.userid,
+        req.body.username,
+        req.body.result,
+        req.body.userResult,
+    ]; 
+
+    const insertQuery = "INSERT INTO questionnaire (userid, username, result, userResult) VALUES (?)";
+
+    db.query(insertQuery, [values], (err, result) => {
+        if (err) {
+            return res.json(err);
+        } else {
+            return res.json("Insert to questionnaire was succesfull!");
+        }
+    });
+
 })
 
 

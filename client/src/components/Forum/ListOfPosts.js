@@ -8,7 +8,7 @@ export default function ListOfPosts({posts, setList}) {
     <div id='PostsContainer'> 
         <ul>
             {posts.map((post) =>
-                <ForumPost title={post.title} description={post.description}/>  
+                <ForumPost title={post.title} description={post.description} username={post.username}/>  
             )}
         </ul>
     </div>
