@@ -6,7 +6,9 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Link } from 'react-router-dom';
+import LoginRegisterC from './smallComponents/LoginRegisterC';
+import LogoutC from './smallComponents/LogoutC';
+
 
 
 
@@ -17,16 +19,9 @@ export default function Header(props) {
 
   return (
     <>
- <div style={{ display: "flex", justifyContent: "flex-end", paddingRight: "10%" }}>
-      <div id="registerLoginContainer">
-      <Link to="/login" style={{ textDecoration: "none" }}>
-        <div style={{color: "white", cursor: "pointer" }}>Login</div>  
-      </Link>
-        <Link to="/register" style={{ textDecoration: "none" }}>
-          <div style={{color: "white", cursor: "pointer" }}>Register</div>
-        </Link>
-      </div>
-    </div>
+    <div style={wrapperContainer}> 
+     {props.loginRegister ? <LoginRegisterC/> : null}
+     {props.logout ? <LogoutC/> : null}
     <Navbar  expand="lg" style={paretContainer}>
       <Container id="kontener" style={{ 
         margin: "0, auto",
@@ -48,6 +43,7 @@ export default function Header(props) {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    </div>
     </>
   )
 }
@@ -83,7 +79,13 @@ const h1 = {
 const paretContainer = {
     display: "flex",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "center", 
+}
+
+const wrapperContainer = {
+  paddingTop: "50px",
+
+
 }
 
 

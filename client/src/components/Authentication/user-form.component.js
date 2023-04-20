@@ -38,6 +38,7 @@ const register = (usernameReg, emailReg, passwordReg) => {
       password: passwordReg,
     }).then((response) => {
       console.log(response);
+      window.location.href = "/login";
     });
   };
   
@@ -66,6 +67,8 @@ export default class UserForm extends Component {
             this.state.emailReg,
             this.state.passwordReg
           );
+          alert("Thank you for signing up!")
+          window.location.href = "/login";
         } else {
           console.log("Form is invalid!");
         }

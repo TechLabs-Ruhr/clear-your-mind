@@ -52,7 +52,7 @@ export default function EditPost({ setList, list }) {
       setDescriptionValue('');
 
       Axios.post("http://localhost:3001/api/insert", newPost).then(() => {
-        alert("successfull insert!")
+        console.log("successfull insert!")
       }) 
 
     } else {  

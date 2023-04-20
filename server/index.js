@@ -105,7 +105,7 @@ app.post('/login', (req, res) => {
                         console.log( "The id is" + result[0].id.toString())
                         console.log(req.session.username);
                         console.log(req.session.id);
-                        res.send(result);
+                        res.send({message: "You've logged in successfully!"});
                     } else {
                         res.send({message: "Wrong username/password combination!"});
                     }

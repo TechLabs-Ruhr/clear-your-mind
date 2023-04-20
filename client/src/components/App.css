@@ -227,7 +227,7 @@ body, html, .App, #root, .auth-wrapper {
 }
 .forgot-password,
 .forgot-password a {
-  text-align: right;
+  text-align: left;
   font-size: 13px;
   padding-top: 10px;
   color: #ffffff;
