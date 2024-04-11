@@ -16,12 +16,14 @@ import LogoutC from './smallComponents/LogoutC';
 export default function Header(props) {
   
   const {isLine} = props;
+  console.log('props.loginRegister:', props.loginRegister);
 
   return (
     <>
     <div style={wrapperContainer}> 
-     {props.loginRegister ? <LoginRegisterC/> : null}
-     {props.logout ? <LogoutC/> : null}
+     {/*props.loginRegister ? <LoginRegisterC/> : null*/}
+     {/*props.logout ? <LogoutC/> : null*/}
+     <LoginRegisterC/>
     <Navbar  expand="lg" style={paretContainer}>
       <Container id="kontener" style={{ 
         margin: "0, auto",
