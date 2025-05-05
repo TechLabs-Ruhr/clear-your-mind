@@ -10,27 +10,59 @@ Our platform offers a simple and effective approach to help users better underst
 ### Tech Stack
 Font End: React, Node.js,
 Back End: Node.js, Express, MySQL
-Data Sience: Python 
+Data Science: Python 
 
 For the style, we used the CSS framework react-bootstrap (Boostrap). The CSS framework "Mui" and fortawesome toolkit were also used sporadically. The icons were taken from Bootstrap, MUI, iconscout, iconsax, iconpark. 
 
-How to Set up and run 
-
-Prerequisites: 
-installed VS Code
-installed Node.js
-installed Git 
-Jupyter Notebook (data science)
-
 ### How to Setup and Run
-1. Open VS Code and select View/CommandPallete or press ctrl + shift + p
-2. Enter clone and select git clone
-3. Enter the repository URL and click enter. You should be prompted to log in to your GitHub account to connect GitHub with VS code
-Once you're logged in select the folder where the repository should be saved on your computer.
-Ensure you have successfully logged in to GitHub and connected it to VS Code otherwise, the cloning process cannot be completed.
-4. Open the terminal and navigate to the main project directory
-type in npm start and click enter. This should run the react application and open it in your default  browser 
+#### Prerequisites
+Before you start, ensure you have the following installed:
+- VS Code
+- Node.js and npm
+- Git 
+- Jupyter Notebook (only for data science)
+  
+#### 1. Cloning the Repository
+1. Open Visual Studio Code (VS Code).
+2. Open the Command Palette by selecting **View > Command Palette** or pressing **Ctrl + Shift + P**.
+3. Type **git clone** and select it.
+4. Enter the repository URL and press **Enter**.
+5. Log in to your GitHub account if prompted.
+6. Choose the directory where you want to clone the repository.
 
+#### 2. Setting up the MySQL
+1. Create a local MySQL database instance on your computer.
+2. Ensure it matches the following credentials (as specified in server/index.js):
+```
+const db = mysql.createPool({
+    host: '127.0.0.1',
+    user: 'root',
+    password: 'clearYourMind391',
+    database: 'cruddatabase'
+})
+```
+#### 3. Installing necessary dependencies 
+1. Open the terminal and navigate to the main project directory. If you open the terminal in VS code you should already be in the main project directory. Then navigate to the client directory. Your terminal should now display a path similar to this:
+```
+ C:\Users\username\Visual Studio Code\clear-your-mind\server>
+```
+2. Type in "npm install" and press enter. This should install the necessary node packages for the client.
+3. Navigate to the server folder on the terminal and use the command "npm install" again to install the node packages for the server folder as well
+4. Use the command "npm install -g nodemon" while being still in the server directory to install nodemon. Nodemon is a Node.js utility that restarts the node server every time we apply some changes to the backend.
+5. Navigate to the main project directory and use the command "npm install bcrypt". Bcrypt is a package we use for hashing the passwords for user accounts
+6. Navigate to the client directory and use the command "npm start" This should run the react app in your default browser
+7. Navigate to the server directory and use the command "nodemon index.js" to run the server.
+8. Now the app should be fully functional provided you have the local instance of the database
+
+#### Troubleshooting
+- Database Connection Issues: Double-check the MySQL credentials and ensure the database is running.
+- npm Install Errors: Ensure your Node.js and npm versions are up-to-date.
+- Server Not Starting: Ensure all dependencies are installed and check for any errors in the terminal.
+
+#### Contact for Support
+If you encounter any issues or have questions, please contact (Isztof) https://github.com/Isztof via GitHub DM or per email: (mariuszseget77@gmail.com)
+
+#### Setting up Data Science  
 To view the data science code, navigate to the data-science folder and open the .ipynb in Juputer Notebook or Google Colab. 
 There are 2 .ipynb files which provide detailed explanations within. 
 
@@ -46,7 +78,7 @@ A brief overview of these two files:
 How to use the Forum:
 
 1. Navigate to the forum by selecting it on the landing page or using the navigation bar in the right upper corner: 
-2. To add a new post to the forum: Type in a title and a description and click on post.
+2. To add a new post to the forum: Type in a title and a description and click on the post.
 3. This will add a new post below the edit post component: 
 
 (The comment feature has not been implemented yet) 
@@ -65,8 +97,8 @@ The remaining features that we plan to implement are:
 9. Implementation of the comment feature for the forum 
    
 ### Authors 
-Mariusz Seget (Isztof) https://github.com/Isztof 
-Yousef Hamadah (yhamadah)  https://github.com/yhamadah
+- Mariusz Seget (Isztof) https://github.com/Isztof 
+- Yousef Hamadah (yhamadah)  https://github.com/yhamadah
 
 
 
