@@ -6,7 +6,6 @@ import Dashboard from './components/Dashboard/Dashboard';
 import MoodTracker from './components/Dashboard/MoodTracker';
 import {Questionnaire} from './components/Questionnaire/Questionnaire';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import './components/App.css';
 import UserForm from './components/Authentication/user-form.component';
 import Login from './components/Authentication/Login';
 

@@ -16,14 +16,6 @@ function Button(props) {
                     className="button-17"
                     onClick={props.onClick}
                     type="submit"
-                    style={{
-                        padding,
-                        fontSize,
-                        width,
-                        display: "inline-block",
-                        margin: "0 auto",
-                        paddingTop: "20px",
-                    }}
                 >
                     {props.inner}
                     {props.title}

@@ -1,31 +1,17 @@
+/* CSS for the entire application */
+/* This CSS file is used to style the entire application, including the header, navigation bar, main content, and footer. */
+
+
 body {
-  background-color: #337233;
-  min-height: 300vh;
+    min-height: 300vh;
     display: flex;
     flex-direction: column;
+    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2c2c2c !important;
 }
 
-
-.dropdown {
-  color: white;
-  background-color: #337233;
-}
-
-#nav-dropdown {
-  background-color: #337233;
-}
-
-.dropdown-menu {
-  background-color: #337233;
-}
-
-.dropdown-toggle {
-  color: white;
-}
-
-.dropdown-toggle::after {
-  color: white;
-}
+/* Header & Navigation Bar*/
 
 a.nav-link {
   font-size: 25px;
@@ -37,28 +23,69 @@ a.nav-link {
   justify-content: space-between;
 }
 
+.navbar-brand {
+    color: #2c2c2c; 
+    text-decoration: none;
+    font-size: 2em !important; /* Matches the default h1 size */
+    font-weight: 650;
+}
+
+.navbar-link {
+    color: #2c2c2c; 
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    display: inline-block; 
+}
+
+
+.navbar-link, .navbar-dropdown {
+    color: #2c2c2c; 
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 10px 15px; 
+    display: inline-block;
+    vertical-align: middle; 
+}
+
+/* Ensured proper alignment for the navigation container */
+.navbar-nav {
+    display: flex;
+    align-items: center; /* Aligns items vertically */
+    justify-content: space-between; /* Ensures even spacing */
+    width: 100%; /* Ensures the container spans the full width */
+    color: #2c2c2c !important;
+}
+
+/* Overriding Bootstrap's .navbar-light .navbar-nav .nav-link property */
+.navbar-light .navbar-nav .nav-link {
+    color: #2c2c2c !important; /* Matches the navbar-brand color */
+}
+
+/*Main page, landing page content*/
+
 #mainPage{
   width: 70%;
   margin: 0 auto;
   min-height: 120vh;
-  padding-bottom: 400px;
+  padding-bottom: 180px;
 }
 
 #about {
-  font-size: 25px;
+  font-size: 28px;
   width: 70%;
-  font-weight: bold;
-  color: white;
+  font-weight: 550;
   text-align: center;
   margin: 0 auto;
   margin-top: 300px;
+  color: #2c2c2c;
 }
 
 #callToAction {
   margin-top: 70px;
   font-size: 25px;
-  font-weight: bold;
-  color: white;
+  font-weight: 570;
   text-align: center;
   padding-bottom: 50px;
 }
@@ -68,17 +95,15 @@ a.nav-link {
   width: 100%;
   justify-content: space-between;
   padding-bottom: 100px;
-  background-color: #337233;
+
 }
 
 .card {
   float: left;
-  background-color: #337233 !important;
-  border: none;
+  background-color:  #f5f1e8 !important;
 }
 
 .cardHeader {
-  color: white;
   font-weight: 500;
   text-align: center;
   font-size: x-large;
@@ -100,16 +125,16 @@ a.nav-link {
 }
 
 .iconWrapper2 {
-  width: 50%;
-  display: flex;
-  padding-bottom: 20px;
-  margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
 .textFieldRight {
   width: 50%;
   float: left;
-  color: white;
   padding-left: 5%;
   padding-right: 10%;
   padding-top: 20px;
@@ -118,10 +143,6 @@ a.nav-link {
 .desc {
   font-size: 19px;
   padding-bottom: 30px;
-}
-
-.footer {
-  margin-top: auto;
 }
 
 #kontener {
@@ -142,7 +163,6 @@ a.nav-link {
   display: flex;
   justify-content: space-between;
   width: 18%;
-  color: white;
   font-size: 22px;
   font-weight: 600;
   padding-right: 50px;
@@ -169,9 +189,6 @@ a.nav-link {
   padding-bottom: 20px;
 }
 
-form {
-  color: white;
-}
 
 .form-group {
   padding-top: 30px;
@@ -206,7 +223,6 @@ body, html, .App, #root, .auth-wrapper {
 .auth-inner {
   width: 450px;
   margin: auto;
-  background: #ffffff;
   box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
   padding: 40px 55px 45px 55px;
   border-radius: 15px;
@@ -230,9 +246,17 @@ body, html, .App, #root, .auth-wrapper {
   text-align: left;
   font-size: 13px;
   padding-top: 10px;
-  color: #ffffff;
   margin: 0;
 }
-.forgot-password a {
-  color: #ffffff;
+
+/* Added styles for the underline CTA */
+.cta-container {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.underline-cta {
+  color: #2c2c2c;
+  font-weight: 500;
+  font-size: 25px;
 }

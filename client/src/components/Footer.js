@@ -7,17 +7,19 @@ function Footer(props) {
 
     const {isLine} = props;
 
-    return ( <>
-    <div id="FooterContainer" style={{borderTop: isLine ? '2px solid white' : 'none'}}>
+    return ( 
+    <>
+      <div id="footerWrapper">
+        <div id="FooterContainer" style={{borderTop: isLine ? '2px solid white' : 'none'}}>
             <div id="logo">Clear Your Mind</div>
             <div className="itemLogo">
                 <div id='copyrightWrapper'> 
                 <Copyright size="22" color="white"/>
                 </div>
                 <span id='secondLogo'> 
-                Clear Your Mind 2023 
+                Clear Your Mind 2025 
                 </span>
-                </div>  
+            </div>  
             <div className="item">Legal Notice </div>
             <div className="item">Terms of Service</div>
             <div className="item">Privacy Policies </div>
@@ -27,8 +29,9 @@ function Footer(props) {
                 <Instagram size="32" color="white"/>
             </div>
         </div>
-    
-    </>);
+      </div>
+    </>
+);
 }
 
 export default Footer;

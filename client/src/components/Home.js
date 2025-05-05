@@ -20,47 +20,49 @@ export function Home() {
     <Header isLine={true}/>
       <main id='mainPage'>
             <p id='about'> 
-            Clear Your Mind Is A Web Page Designed To Help Physiotherapy Patients Bridge The Time Till Their First Consultation
+            Clear your mind is a web page designed to help physiotherapy patients bridge the time till their first consultation
             </p>
             <div id="callToAction">Bridge The Time Till Your Consultation With Our 5 Step Model!</div>
             <div id="fourStepModel">
               <div className='card'> 
-                <AssignmentIcon sx={{ color: "white", fontSize: "200px" }} />
+                <AssignmentIcon sx={{ color: "#2c2c2c", fontSize: "200px" }} />
                 <div className='cardHeader'>
                   Diagnose    
                 </div>
               </div>
               <div className='card'> 
-                <LibraryBooksIcon sx={{ color: "white", fontSize: "200px" }}/>
+                <LibraryBooksIcon sx={{ color: "#2c2c2c", fontSize: "200px" }}/>
                 <div className='cardHeader'>
                   Learn
                 </div>
               </div>
               <div className='card'>
-                <PeopleIcon sx={{ color: "white", fontSize: "200px" }}  />
+                <PeopleIcon sx={{ color: "#2c2c2c", fontSize: "200px" }}  />
                 <div className='cardHeader'>
                   Find Support
                 </div>
               </div>
               <div className='card'>
-                <SpeedIcon sx={{ color: "white", fontSize: "200px" }}/>
+                <SpeedIcon sx={{ color: "#2c2c2c", fontSize: "200px" }}/>
                 <div className='cardHeader'>
                   Measure
                 </div>
               </div>
               <div className='card'>
-                <UilDiary size="200" color="white"/>
+                <UilDiary size="200" color="#2c2c2c"/>
                 <div className='cardHeader'>
                   Track
                 </div>
               </div>
             </div>
-            <div style={{width: "30%"}}> 
-          <Button title={"Learn More"} inner={<ArrowDown2 size="32" backgroundColor="white" color="#337233"/>}/> 
-          </div>
+          <p className="cta-container">
+            <a className="underline-cta">
+              Learn more about the process ↓
+            </a>
+          </p>
           <div className='valueProposition'> 
           <div className='iconWrapper'>
-            <AssignmentIcon sx={{ color: "white", fontSize: "440px" }} />
+            <AssignmentIcon sx={{ color: "#2c2c2c", fontSize: "440px" }} />
           </div>
             <div className='textFieldRight'>
             <h2>DIAGNOSE</h2>
@@ -86,13 +88,13 @@ export function Home() {
               <Button title="Free Content"/> 
             </div>
             <div className='iconWrapper'>
-            <LibraryBooksIcon sx={{ color: "white", fontSize: "440px" }} />
+            <LibraryBooksIcon sx={{ color: "#2c2c2c", fontSize: "440px" }} />
           </div>
           </div>
               {/*Find Support Value proposition*/}
           <div className='valueProposition'> 
           <div className='iconWrapper'>
-            <PeopleIcon sx={{ color: "white", fontSize: "440px" }} />
+            <PeopleIcon sx={{ color: "#2c2c2c", fontSize: "440px" }} />
           </div>
             <div className='textFieldRight'>
             <h2>FIND SUPPRORT</h2>
@@ -128,13 +130,13 @@ export function Home() {
               <Button route="MTD" title="Mood Tracker & Diary Dashboard"/> 
             </div>
             <div className='iconWrapper2'>
-            <SpeedIcon sx={{ color: "white", fontSize: "400px" }} />
-            <UilDiary size="440" color="white"/>
+            <SpeedIcon sx={{ color: "#2c2c2c", fontSize: "300px" }}/>
+            <UilDiary size="300" color="#2c2c2c"/>
           </div>
           </div>
       </main>
-      <footer className='footer'>
-      <Footer isLine={true}></Footer>
+      <footer>
+      <Footer isLine={false}></Footer>
       </footer>
       
 

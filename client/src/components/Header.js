@@ -28,16 +28,16 @@ export default function Header(props) {
         width: "70%",
         paddingBottom: "20px",
         borderBottom: isLine ? '2px solid white' : 'none'}}>
-        <Navbar.Brand style={h1} href="#home">CLEAR YOUR MIND</Navbar.Brand>
+        <Navbar.Brand className="navbar-brand" href="#home">CLEAR YOUR MIND</Navbar.Brand>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav style={NavNav} className="flex-grow-5 justify-content-evenly">
-            <Nav.Link style={navLink} href="/">Home</Nav.Link>
-            <Nav.Link style={navLink} href="#link">About</Nav.Link>
-            <NavDropdown title={<span className="dropdown">Find Help</span>} id="nav-dropdown">
-            <NavDropdown.Item style={navLink} href="/questionnaire">Questionnaire</NavDropdown.Item>
-              <NavDropdown.Item  style={navLink} href="#action/3.2">Free Content</NavDropdown.Item>
-              <NavDropdown.Item style={navLink}  href="/forum">Forum</NavDropdown.Item>
-              <NavDropdown.Item style={navLink}  href="/MTD">Mood Tracker & Diary</NavDropdown.Item>
+            <Nav.Link className="navbar-link" href="/">Home</Nav.Link>
+            <Nav.Link className="navbar-link" href="#link">About</Nav.Link>
+            <NavDropdown title={<span className="navbar-link">Find Help</span>} id="nav-dropdown">
+            <NavDropdown.Item className="navbar-link" href="/questionnaire">Questionnaire</NavDropdown.Item>
+              <NavDropdown.Item  className="navbar-link" href="#action/3.2">Free Content</NavDropdown.Item>
+              <NavDropdown.Item className="navbar-link"  href="/forum">Forum</NavDropdown.Item>
+              <NavDropdown.Item className="navbar-link"  href="/MTD">Mood Tracker & Diary</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
