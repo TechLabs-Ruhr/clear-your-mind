@@ -4,25 +4,14 @@ html, body {
 }
 
 .main2 {
-  background-color: #7BC17A;
   min-height: 120vh;
   padding-bottom: 180px;
-  /*
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  */
 }
 .forum {
   margin-top: auto;
 }
 
-.footer {
-  bottom: 0;
-  min-width: 100%;
-  background-color: #337233;
-  height: 170px;
-}
+
 
 #main {
     margin: 0 auto;
@@ -43,6 +32,7 @@ html, body {
     align-items: center;
     display: flex;
     justify-content: space-between;
+    gap: 60px;
 }
 
 .seperator {
@@ -63,6 +53,10 @@ p {
   margin-top: 0.5em;
 }
 
+#searchInput {
+  
+}
+
 .search {
   border: 2px solid #000;
   border-radius: 3em;
@@ -73,6 +67,7 @@ p {
   padding: 9px;
   width: 50%;
   padding-right: 0%;
+  background-color: #f5f1e8;;
 }
 
 .search:focus-within {
@@ -80,40 +75,37 @@ p {
 }
 
 .search__button {
-  margin-left: 21%; 
+  margin-left: 11%; 
+  padding-right: 10%;
   border: none;
   outline: none;
-}
-
-
-.search__input {
-  background-color: #fff;
-  border: none;
-  outline: none;
-  max-width: 480px;
-}
-
-.search__input {
-  padding-right: 0px;
-  width: 125%;
-  background-color: #7BC17A;
-  color: #757070;
-}
-
-::placeholder {
-  font-size: 24px;
-  color: #999090;
-}
-
-.search__button {
+  background-color: #f5f1e8;
   width: 15%;
   font-size: 1.5em;
   color: #757070;
   display: grid;
   place-content: center;
-  background-color: #7BC17A;
-
+    
 }
+
+
+.search__input {
+  padding-right: 0px;
+  width: 125%;
+  color: #757070;
+  border: none;
+  outline: none;
+  max-width: 480px;
+  background-color: inherit;   
+  font-size: 0.75em;
+}
+
+::placeholder {
+  font-size: 0.75em;
+  color: #999090;
+}
+
+
 
 @media (min-width: 576px) {
   .search {
@@ -138,7 +130,7 @@ p {
 
 #EditPostContainer{
   margin: 0 auto;
-  width: 60%;
+  width: 50%;
   height: 600px;
   background-color: white;
   margin-top: 100px;
@@ -171,7 +163,8 @@ p {
 
 #Description {
   width: 53.5rem;
-  height: 400px;
+  resize: none;
+  overflow: hidden;
   vertical-align: top;
   padding-bottom: 360px;
   font-weight: 500;
@@ -179,10 +172,8 @@ p {
   background-color: transparent;
   border-color: transparent;
   white-space: pre-wrap;
-  resize: vertical; /* only allow vertical resizing */
-  overflow: auto; /* add a scrollbar when the content overflows */
   min-height: 100px; /* set a minimum height */
-  max-height: 400px; /* set a maximum height */
+  max-height: 360px; /* set a maximum height */
   width: 100%; /* set the width to fill the available space */
 }
 
@@ -198,7 +189,7 @@ p {
 
 .PostContainer{
   margin: 0 auto;
-  width: 60%;
+  width: 50%;
   height: 400px;
   background-color: white;
   margin-top: 100px;
@@ -254,6 +245,11 @@ p {
   width: 70%;
 }
 
+.IconUsernameContainer{
+  display: flex;
+  gap: 1em;
+}
+
 .UserIconContainer {
   margin-top: 8px;
 }
@@ -278,16 +274,18 @@ p {
 .SecondElementSet {
   display: flex;
   width: 30%;
-  padding-left: 15%;
+  padding-left: 12%;
 
 }
 
 ul {
-  width: 160%
+  width: 160%;
+  padding-left: 0px;
 }
 
 #PostsContainer {
   min-height: 60vh;
   display: flex;
   align-items: stretch;
+  padding-left: 0px;
 }

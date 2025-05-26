@@ -20,7 +20,7 @@ export default function SearchBar({ posts, setSearchResults }) {
     <input
         className="search__input"
         type="text"
-        id="search"
+        id="searchInput"
         placeholder='Search Through Topics..'
         onChange={handleSearchChange}
     />

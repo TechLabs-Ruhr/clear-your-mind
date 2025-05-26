@@ -7,6 +7,11 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
+const PORT = 3002; 
+
+app.listen(PORT, () => {
+    console.log(`Running on port ${PORT}`);
+});
 
 const db = mysql.createPool({
     host: '127.0.0.1',
@@ -16,14 +21,13 @@ const db = mysql.createPool({
 })
 
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: "http://localhost:3001",
     methods: ["GET", "POST"],
     credentials: true,
     optionsSuccessStatus: 200 
   }));
 
 app.use(cookieParser());
-
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -32,7 +36,10 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     cookie: {
-        expires: 60 * 60 * 24,
+        maxAge: 1000 * 60 * 60 * 24 * 7, // 1 week
+        secure: false,
+        httpOnly: true,
+        sameSite: "lax"
     }
 }))
 
@@ -53,6 +60,15 @@ app.post("/api/insert", (req, res)=> {
         }
     });
 })
+
+app.get('/api/get', (req, res) =>{
+    const sqlSelect = "SELECT * FROM post"
+    db.query(sqlSelect, (err, result) => {
+       console.log(result);
+       res.send(result);
+    })
+});
+
 
 app.post('/register', (req, res ) => {
     
@@ -138,17 +154,4 @@ app.post('/questionnaire', (req, res) => {
 })
 
 
-app.get('/api/get', (req, res) =>{
-    const sqlSelect = "SELECT * FROM post"
-    db.query(sqlSelect, (err, result) => {
-       console.log(result);
-       res.send(result);
-    })
-});
 
-
-
-
-app.listen(3001, () => {
-    console.log("Running on port 3001");
-})

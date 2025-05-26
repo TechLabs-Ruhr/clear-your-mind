@@ -4,14 +4,14 @@ import '../App.css';
 
 export default function LoginRegisterC() {
   return (
-    <div style={{ display: "flex", justifyContent: "flex-end", paddingRight: "10%" }}>
+    <div>
       <div id="registerLoginContainer">
-      <Link to="/login" style={{ textDecoration: "none" }}>
-        <div style={{color: "white", cursor: "pointer" }}>Login</div>  
+      <Link to="/login" >
+        <div id='linkElement'>Sign in</div>  
       </Link>
-        <Link to="/register" style={{ textDecoration: "none" }}>
-          <div style={{color: "white", cursor: "pointer" }}>Register</div>
-        </Link>
+      <Link to="/register">
+          <div id='linkElement'>Sign up</div>
+      </Link>
       </div>
     </div>
   )

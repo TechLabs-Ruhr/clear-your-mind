@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -8,32 +8,45 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import LoginRegisterC from './smallComponents/LoginRegisterC';
 import LogoutC from './smallComponents/LogoutC';
+import Axios from 'axios';
 
 
 
 
-
-export default function Header(props) {
-  
-  const {isLine} = props;
+export default function Header({isLine}) {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  Axios.defaults.withCredentials =  true;
+  // Check login status on component mount
+  useEffect(() => {
+    Axios.get('http://localhost:3002/login') 
+      .then((response) => {
+        console.log("User logged  in?: " + response.data.loggedIn);
+        if (response.data.loggedIn) {
+          setIsLoggedIn(true);
+        } else {
+          setIsLoggedIn(false);
+        }
+      })
+      .catch((error) => {
+        console.error('Error checking login status:', error);
+      });
+  }, []);
 
   return (
     <>
-    <div style={wrapperContainer}> 
-     {props.loginRegister ? <LoginRegisterC/> : null}
-     {props.logout ? <LogoutC/> : null}
-    <Navbar  expand="lg" style={paretContainer}>
-      <Container id="kontener" style={{ 
-        margin: "0, auto",
-        width: "70%",
-        paddingBottom: "20px",
-        borderBottom: isLine ? '2px solid white' : 'none'}}>
+    <div className="wrapperContainer"> 
+    <Navbar  expand="lg" className="paretContainer">
+      <Container id="kontener" className="headerContainer">
         <Navbar.Brand className="navbar-brand" href="#home">CLEAR YOUR MIND</Navbar.Brand>
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav style={NavNav} className="flex-grow-5 justify-content-evenly">
+          <Nav className="NavNav flex-grow-5 justify-content-evenly">
             <Nav.Link className="navbar-link" href="/">Home</Nav.Link>
-            <Nav.Link className="navbar-link" href="#link">About</Nav.Link>
-            <NavDropdown title={<span className="navbar-link">Find Help</span>} id="nav-dropdown">
+           {/* <Nav.Link className="navbar-link" href="#link">About</Nav.Link> */ }
+            <NavDropdown 
+              title={<span className="navbar-link dropdown-title">Find Help</span>} 
+              id="nav-dropdown"
+              className="dropdown-container"
+            >
             <NavDropdown.Item className="navbar-link" href="/questionnaire">Questionnaire</NavDropdown.Item>
               <NavDropdown.Item  className="navbar-link" href="#action/3.2">Free Content</NavDropdown.Item>
               <NavDropdown.Item className="navbar-link"  href="/forum">Forum</NavDropdown.Item>
@@ -41,51 +54,14 @@ export default function Header(props) {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
+        <Nav.Link className="loginRegisterContainer">
+              {isLoggedIn ? <LogoutC /> : <LoginRegisterC />}
+        </Nav.Link>
       </Container>
     </Navbar>
     </div>
     </>
   )
-}
-
-
-const navLink = {
-    color: "white",
-    backgroundColor: "#337233",
-    paddingRight: "70px"
-}
-
-const NavNav = {
- marginLeft: "60%",
- color: "white",
- width: "90%",
- display: "flex",
- justifyContent: "space-between"
-}
-
-
-const body = {
-    backgroundColor: "#37a837"
-}
-
-const h1 = {
-    color: "white",
-    textDecoration: "none",
-    fontSize: "35px",
-    fontWeight: "650",
-}
-
-
-const paretContainer = {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center", 
-}
-
-const wrapperContainer = {
-  paddingTop: "50px",
-
-
 }
 
 

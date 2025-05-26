@@ -21,12 +21,10 @@ export default function Login() {
   const onSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted!")
-    Axios.post('http://localhost:3001/login', {
+    Axios.post('http://localhost:3002/login', {
       email: email,
       password: password,
     }).then((response) => {
-      console.log(response);
-      console.log(response.data.message);
       setLoginStatus(response.data.message);
     });
   }
@@ -42,19 +40,19 @@ export default function Login() {
 
 
   //Function for seeing whether a session was created successfully 
-  
+  /*
   useEffect(()=> {
-    Axios.get("http://localhost:3001/login").then((response) => {
-      console.log(response);
+    Axios.get("http://localhost:3002/login").then((response) => {
+      console.log("Is logged in?" + response.data.loggedIn);
       if(response.data.loggedIn) {
         setLoginRegisterDisplay(false)
       }
     })
   }, [])
-  
+  */
   return (
     <> 
-      <Header loginRegister={false} logout={false}  isLine={true}/> 
+      <Header loginRegister={loginRegisterDisplay} logout={false}  isLine={true}/> 
       <div id="container"> 
         <div id="formContainer"> 
           <form onSubmit={onSubmit}>
@@ -107,7 +105,7 @@ export default function Login() {
           </form>
             </div>
            </div>
-        <Footer  isLine={true}/>
+        <Footer isLine={false}/>
     </>
   )
 }

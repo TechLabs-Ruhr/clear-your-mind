@@ -6,7 +6,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import MoodTracker from './components/Dashboard/MoodTracker';
 import {Questionnaire} from './components/Questionnaire/Questionnaire';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import UserForm from './components/Authentication/user-form.component';
+import Register from './components/Authentication/Register';
 import Login from './components/Authentication/Login';
 
 
@@ -20,7 +20,7 @@ function App() {
       <Route path='MTD' element={<Dashboard/>}> </Route>
       <Route path='/MTD/moodTracker' element={<MoodTracker/>}> </Route>
       <Route path='/questionnaire' element={<Questionnaire/>}> </Route>
-      <Route path='/register' element={<UserForm/>}> </Route>
+      <Route path='/register' element={<Register/>}> </Route>
       <Route path='/login' element={<Login/>}> </Route>
    </Routes>
   );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import AssignmentIcon from '@mui/icons-material/Assignment';
@@ -10,14 +10,27 @@ import Button from './smallComponents/Button';
 import {ArrowDown2} from 'iconsax-react';
 import Footer from './Footer';
 import Header from './Header';
+import Axios from 'axios'
 
 
 //import { faCoffeefaCoffee } from '@fortawesome/free-solid-svg-icons'
 
 
 export function Home() {
+   const [loginRegisterDisplay, setLoginRegisterDisplay] = useState(true);
+   Axios.defaults.withCredentials =  true;
+
+    useEffect(()=> {
+       Axios.get("http://localhost:3002/login").then((response) => {
+         console.log("Is logged in?" + response.data.loggedIn);
+         if(response.data.loggedIn) {
+           setLoginRegisterDisplay(false)
+         }
+       })
+     }, [])
+
     return ( <>
-    <Header isLine={true}/>
+    <Header loginRegister={loginRegisterDisplay} isLine={true}/>
       <main id='mainPage'>
             <p id='about'> 
             Clear your mind is a web page designed to help physiotherapy patients bridge the time till their first consultation

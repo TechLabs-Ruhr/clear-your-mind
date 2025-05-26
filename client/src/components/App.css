@@ -146,8 +146,7 @@ a.nav-link {
 }
 
 #kontener {
-  margin-left: 0px;
-  margin-right: 0px;
+  margin: 0 auto;
   min-width: 72%;
 }
 
@@ -161,13 +160,31 @@ a.nav-link {
 
 #registerLoginContainer {
   display: flex;
-  justify-content: space-between;
-  width: 18%;
-  font-size: 22px;
-  font-weight: 600;
-  padding-right: 50px;
-  padding-top: 50px;
+  align-items: center;
+  gap: 50px;
+  text-decoration: none;
 }
+
+#linkElement{
+  color: #2c2c2c !important;
+}
+
+
+.dropdown-title {
+  display: inline-block;
+  width: 120px; /* Set the width to match other navbar items */
+  text-align: center; /* Center the text */
+}
+
+.dropdown-container {
+  width: auto; /* Ensure the dropdown menu itself adjusts dynamically */
+}
+/*CSS for sign out button*/
+#logOutButton {
+  min-width: 100px;
+  color: #2c2c2c !important;
+}
+
 
 /*CSS for register UI*/
 
@@ -259,4 +276,41 @@ body, html, .App, #root, .auth-wrapper {
   color: #2c2c2c;
   font-weight: 500;
   font-size: 25px;
+}
+
+/* Styling for Header component */
+
+.wrapperContainer {
+  padding-top: 50px;
+}
+
+.paretContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerContainer {
+  margin: 0 auto;
+  width: 70%;
+  padding-bottom: 20px;
+  border-bottom: 2px solid white;
+}
+
+.NavNav {
+  margin-left: 60%;
+  color: white;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-link {
+
+  padding-right: 70px;
+}
+
+.loginRegisterContainer {
+  display: flex;
+  align-items: center;
 }

@@ -5,13 +5,11 @@ import { useState } from 'react';
 import Axios from 'axios'
 
 export default function EditPost({ setList, list }) {
-  
+
   const [titleValue, setTitleValue] = useState('');
   const [descriptionValue, setDescriptionValue] = useState('');
-  
   const [username, setUsername] = useState('');
  
-
   const handleTitleChange = event => {
     setTitleValue(event.target.value);
   };
@@ -20,16 +18,9 @@ export default function EditPost({ setList, list }) {
     setDescriptionValue(event.target.value);
   };
 
-
-  let userId;
-
   useEffect(()=> {
-    Axios.get("http://localhost:3001/login", { withCredentials: true }).then((response) => {
-      console.log(response);
-      userId = response.data.id;
+    Axios.get("http://localhost:3002/login", { withCredentials: true }).then((response) => {
       setUsername(response.data.username);
-      console.log(username);
-      console.log(userId);
     })
   }, [])
 
@@ -38,31 +29,37 @@ export default function EditPost({ setList, list }) {
     event.preventDefault();
     
     if (titleValue.trim() && descriptionValue.trim()) {
-      console.log(username);
+      const now = new Date();
+      const currentDate = now.getFullYear() + '-' +
+      String(now.getMonth() + 1).padStart(2, '0') + '-' +
+      String(now.getDate()).padStart(2, '0') + ' ' +
+      String(now.getHours()).padStart(2, '0') + ':' +
+      String(now.getMinutes()).padStart(2, '0') + ':' +
+      String(now.getSeconds()).padStart(2, '0');
+      
       const newPost = {
         username: username,
-        postTime: '2023-04-06',
+        postTime: currentDate,
         title: titleValue.trim(),
         description: descriptionValue.trim(),
       };
-      console.log(newPost.id);
-      //console.log(newPost.userid);
+   
       setList([...list, newPost]);
       setTitleValue('');
       setDescriptionValue('');
 
-      Axios.post("http://localhost:3001/api/insert", newPost).then(() => {
-        console.log("successfull insert!")
-      }) 
+      Axios.post("http://localhost:3002/api/insert", newPost)
+        .then((response) => {
+          console.log("Successful insert! Server responded with:", response.data);
+      })
+        .catch((error) => {
+        console.error("Error during post insertion:", error);
+      });
 
     } else {  
       alert("Your post has to have a title and a description!")
     } 
   }
-
-
-
-
 
   return (
     <>
@@ -72,19 +69,8 @@ export default function EditPost({ setList, list }) {
                   <input id='Title' placeholder='Title' value={titleValue} onChange={handleTitleChange}/>           
                   <textarea id='Description' placeholder='Description..' value={descriptionValue} onChange={handleDescriptionChange}/>           
                 <Button onClick={handleSubmit} width="97%" root="#" title="Post"  /> 
-            </div> {/*
-            <button onClick={handleSubmit}>
-      Click me!
-  </button> */}
+            </div> 
         </div>
     </>
   )
 }
-
-
- /*
-  const addPost = (e) => {
-    e.preventDefault();
-    setList((list) => [...list, {title:  titleValue, description: descriptionValue, id: Math.random() * 100 }]);
-  };
-*/

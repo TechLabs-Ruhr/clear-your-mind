@@ -32,7 +32,7 @@ const regExp = RegExp(
 };
 
 const register = (usernameReg, emailReg, passwordReg) => {
-    Axios.post('http://localhost:3001/register', {
+    Axios.post('http://localhost:3002/register', {
       username: usernameReg,
       email: emailReg,
       password: passwordReg,
@@ -43,7 +43,7 @@ const register = (usernameReg, emailReg, passwordReg) => {
   };
   
 
-export default class UserForm extends Component {
+export default class Register extends Component {
     
     constructor(props) {
         super(props)
